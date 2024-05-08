@@ -60,7 +60,11 @@
     "gh-pages": "react-scripts build && gh-pages -d build"
   },
   "eslintConfig": {
-    "extends": []
+    "extends": [
+      "react-app",
+      "react-app/jest",
+      "prettier"
+    ]
   },
   "browserslist": {
     "production": [
