@@ -1,12 +1,12 @@
-import { BreadcrumbType } from "tapis-ui/_common/Breadcrumbs/Breadcrumbs";
-import normalize from "normalize-path";
+import { BreadcrumbType } from 'tapis-ui/_common/Breadcrumbs/Breadcrumbs';
+import normalize from 'normalize-path';
 
 const breadcrumbsFromPathname = (pathname: string) => {
   const items: Array<BreadcrumbType> = [];
-  const pathParts = pathname.split("/");
+  const pathParts = pathname.split('/');
   pathParts.forEach((_, index) => {
     const to = normalize(
-      "/" + pathParts.slice(0, index + 1).join("/") + "/",
+      '/' + pathParts.slice(0, index + 1).join('/') + '/',
       false
     );
     if (pathParts[index].length) {

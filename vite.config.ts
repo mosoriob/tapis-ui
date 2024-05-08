@@ -1,14 +1,14 @@
-import { defineConfig, loadEnv } from "vite";
-import react from "@vitejs/plugin-react";
-import viteTsconfigPaths from "vite-tsconfig-paths";
+import { defineConfig, loadEnv } from 'vite';
+import react from '@vitejs/plugin-react';
+import viteTsconfigPaths from 'vite-tsconfig-paths';
 
-const env = loadEnv("", process.cwd());
+const env = loadEnv('', process.cwd());
 export default defineConfig({
   // depending on your application, base can also be "/"
-  base: "",
+  base: '',
   css: { preprocessorOptions: { scss: { charset: false } } },
   define: {
-    "process.env": env,
+    'process.env': env,
   },
   plugins: [react(), viteTsconfigPaths(), viteTsconfigPaths()],
   server: {

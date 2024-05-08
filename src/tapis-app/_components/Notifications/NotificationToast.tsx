@@ -1,9 +1,9 @@
-import React, { useState, useEffect, SyntheticEvent } from "react";
-import { useNotifications, NotificationRecord, Notification } from ".";
-import Snackbar, { SnackbarCloseReason } from "@mui/material/Snackbar";
-import Slide, { SlideProps } from "@mui/material/Slide";
-import { Icon } from "tapis-ui/_common";
-import styles from "./NotificationToast.module.scss";
+import React, { useState, useEffect, SyntheticEvent } from 'react';
+import { useNotifications, NotificationRecord, Notification } from '.';
+import Snackbar, { SnackbarCloseReason } from '@mui/material/Snackbar';
+import Slide, { SlideProps } from '@mui/material/Slide';
+import { Icon } from 'tapis-ui/_common';
+import styles from './NotificationToast.module.scss';
 
 const NotificationToast = () => {
   type TransitionType =
@@ -49,7 +49,7 @@ const NotificationToast = () => {
     _event: Event | SyntheticEvent<any, Event>,
     reason: SnackbarCloseReason
   ) => {
-    if (reason === "clickaway") {
+    if (reason === 'clickaway') {
       return;
     }
     setOpen(false);
@@ -59,8 +59,8 @@ const NotificationToast = () => {
     <Snackbar
       key={notificationRecord ? notificationRecord.id : undefined}
       anchorOrigin={{
-        vertical: "bottom",
-        horizontal: "left",
+        vertical: 'bottom',
+        horizontal: 'left',
       }}
       TransitionComponent={transition}
       open={open}
@@ -70,12 +70,12 @@ const NotificationToast = () => {
         onExited: handleExited,
       }}
       classes={{
-        anchorOriginBottomLeft: styles["notification-toast-container"],
+        anchorOriginBottomLeft: styles['notification-toast-container'],
       }}
       ContentProps={{
         classes: {
-          root: styles["notification-toast"],
-          message: styles["notification-toast-body"],
+          root: styles['notification-toast'],
+          message: styles['notification-toast-body'],
         },
       }}
       message={<ToastMessage notification={notificationRecord!.notification} />}
@@ -88,15 +88,15 @@ export const ToastMessage: React.FC<{ notification: Notification }> = ({
 }) => {
   return (
     <>
-      <div className={styles["notification-toast-icon-wrapper"]}>
+      <div className={styles['notification-toast-icon-wrapper']}>
         <Icon
           name={notification.icon}
           className={
-            notification.status === "ERROR" ? styles["toast-is-error"] : ""
+            notification.status === 'ERROR' ? styles['toast-is-error'] : ''
           }
         />
       </div>
-      <div className={styles["notification-toast-content"]}>
+      <div className={styles['notification-toast-content']}>
         <span>{notification.message}</span>
       </div>
     </>

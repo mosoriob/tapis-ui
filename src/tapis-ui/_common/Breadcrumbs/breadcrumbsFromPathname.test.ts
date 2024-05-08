@@ -1,9 +1,9 @@
-import breadcrumbsFromPathname from "./breadcrumbsFromPathname";
+import breadcrumbsFromPathname from './breadcrumbsFromPathname';
 
-describe("Breadcrumbs from pathname function", () => {
-  it("converts a pathname into an Array of BreadcrumbTypes", () => {
-    expect(breadcrumbsFromPathname("/files/")).toEqual([
-      { to: "/files/", text: "files" },
+describe('Breadcrumbs from pathname function', () => {
+  it('converts a pathname into an Array of BreadcrumbTypes', () => {
+    expect(breadcrumbsFromPathname('/files/')).toEqual([
+      { to: '/files/', text: 'files' },
     ]);
     // expect(breadcrumbsFromPathname("/files/system/")).toEqual([
     //   { to: "/files/", text: "files" },
