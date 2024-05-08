@@ -3,11 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
     "@fortawesome/fontawesome-svg-core": "^1.2.25",
     "@fortawesome/free-regular-svg-icons": "^5.11.2",
     "@fortawesome/free-solid-svg-icons": "^5.11.2",
     "@fortawesome/react-fontawesome": "^0.1.8",
-    "@material-ui/core": "^4.12.3",
+    "@mui/material": "^5.15.16",
+    "@mui/styles": "^5.15.16",
     "@reduxjs/toolkit": "^1.5.1",
     "@tapis/tapis-typescript": "^0.0.18",
     "axios": "^0.21.4",
@@ -18,6 +21,9 @@
     "js-cookie": "^3.0.0",
     "jwt-decode": "^3.1.2",
     "lodash": "^4.17.21",
+    "postcss-flexbugs-fixes": "^5.0.2",
+    "postcss-normalize": "^10.0.1",
+    "postcss-preset-env": "^9.5.11",
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
     "react-copy-to-clipboard": "^5.0.2",
@@ -27,7 +33,7 @@
     "react-query": "^3.19.2",
     "react-resize-detector": "^6.1.0",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "4.0.3",
+    "react-scripts": "5.0.1",
     "react-step-wizard": "^5.3.9",
     "react-table": "^7.0.5",
     "react-transition-group": "^4.4.1",
@@ -43,8 +49,8 @@
   },
   "homepage": "https://tapis-project.github.io/tapis-ui",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
     "test": "TZ=UTC react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint --max-warnings=0 . && prettier --single-quote --check src",
@@ -52,11 +58,7 @@
     "gh-pages": "react-scripts build && gh-pages -d build"
   },
   "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest",
-      "prettier"
-    ]
+    "extends": []
   },
   "browserslist": {
     "production": [
@@ -71,6 +73,8 @@
     ]
   },
   "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@babel/plugin-transform-private-property-in-object": "^7.24.5",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/react-hooks": "^7.0.2",
@@ -94,8 +98,10 @@
     "@types/uuid": "^8.3.1",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-prettier": "^8.3.0",
-    "gh-pages": "^3.2.3",
+    "gh-pages": "^6.1.1",
+    "path": "^0.12.7",
     "prettier": "^2.3.2",
+    "react-app-rewired": "^2.2.1",
     "redux-mock-store": "^1.5.4",
     "redux-saga-test-plan": "^4.0.3"
   }
