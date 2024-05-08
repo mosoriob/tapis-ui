@@ -5,7 +5,7 @@ on:
   push:
     branches: [dev, stage, release-*]
   pull_request:
-    branches: ['**']
+    branches: ["**"]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -94,6 +94,7 @@ jobs:
         id: set_image_tag
 
   Build_Push_Image:
+    if: github.event_name != 'pull_request'
     needs:
       - Resolve_Image_Tag
       - Client_Side_Linting
